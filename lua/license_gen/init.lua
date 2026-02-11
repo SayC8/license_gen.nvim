@@ -1,4 +1,4 @@
-local templates = require("license_gen.templates") -- Ensure this is underscored
+local templates = require("license_gen.templates")
 
 local M = {}
 
@@ -18,22 +18,20 @@ function M.create_license()
     }, function(choice)
         if not choice then return end
 
-        local year = os.date("%Y") -- Fixed typo: os.date instead of os.data
+        local year = os.date("%Y")
 
         local name = M.config.default_name
         if not name or name == "" then
-            -- Using vim.system (Neovim 0.10+) to get git name cleanly
             local git_obj = vim.system({ "git", "config", "user.name" }, { text = true }):wait()
             name = vim.trim(git_obj.stdout)
         end
 
         local content = templates.licenses[choice]
 
-        -- CORRECTED PATTERNS: Escaping the brackets
         content = content:gsub("%[year%]", year)
         content = content:gsub("%[fullname%]", name)
 
-        local path = vim.fn.getcwd() .. "/LICENSE" -- Fixed typo: getcwd()
+        local path = vim.fn.getcwd() .. "/LICENSE"
         local file = io.open(path, "w")
         if file then
             file:write(content)
