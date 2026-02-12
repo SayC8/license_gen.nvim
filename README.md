@@ -47,3 +47,8 @@ Select your desired license from the dropdown.
 The plugin will generate a LICENSE file in your current working directory.
 
 If a LICENSE already exists, it will ask for confirmation before overwriting.
+
+### TODO
+
+- Improve command: 'GenerateLicense mit' etc, otherwise show the full list
+- Add more licences
