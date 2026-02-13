@@ -26,16 +26,16 @@ Add the following to your plugin specification:
                     MyCustomLicense = "Copyright (c) [year] [fullname]\nAll rights reserved."
                 }
         }
+        require("license_gen").setup()
 }
 ```
 
 ## 🚀 Usage
 
-Simply run the following command in your terminal buffer:
+Simply run the following command:
 ```Vim Script
 :AddLicense
 ```
-
 Select your desired license from the dropdown.
 
 The plugin will generate a LICENSE file in your current working directory.
