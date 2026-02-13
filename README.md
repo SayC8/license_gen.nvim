@@ -5,13 +5,7 @@ A lightweight, no-nonsense Neovim plugin written in Lua to quickly generate LICE
 ## ✨ Features
 
 Supports multiple license types (MIT, Apache 2.0, GPL v3, etc.).
-
 Automatically detects your name from git config and the current year.
-
-Uses vim.ui.select to integrate with your favorite picker (Telescope, fzf-lua, etc.).
-
-Built with Neovim 0.11 features in mind.
-
 
 ## 🛠️ Requirements
 
@@ -25,7 +19,7 @@ Add the following to your plugin specification:
 ```Lua
 {
     "SayC8/license_gen.nvim",
-        cmd = "GenerateLicense",
+        cmd = "AddLicense",
         opts = {
             default_name = "John Doe", -- Optional: overrides git config
                 extra_licences = { -- Optional: add your own templates
@@ -39,7 +33,7 @@ Add the following to your plugin specification:
 
 Simply run the following command in your terminal buffer:
 ```Vim Script
-:GenerateLicense
+:AddLicense
 ```
 
 Select your desired license from the dropdown.
@@ -50,5 +44,4 @@ If a LICENSE already exists, it will ask for confirmation before overwriting.
 
 ### 📝 TODO
 
-- Improve command: 'GenerateLicense mit' etc, otherwise show the full list
 - Add more licences
