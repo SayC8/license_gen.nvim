@@ -21,7 +21,7 @@ function M.setup(opts)
 end
 
 local function write_license_file(choice, name)
-    local content = templates.license[choice]
+    local content = templates.licenses[choice]
     if not content then
         vim.notify("License '" .. choice .. "' not found.", vim.log.levels.ERROR)
         return
@@ -41,7 +41,7 @@ local function write_license_file(choice, name)
     end
 end
 
-function M.create_license()
+function M.create_license(arg)
     local license_names = vim.tbl_keys(templates.licenses)
 
     local name = M.config.default_name
