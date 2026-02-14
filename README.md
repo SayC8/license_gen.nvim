@@ -26,7 +26,9 @@ Add the following to your plugin specification:
                     MyCustomLicense = "Copyright (c) [year] [fullname]\nAll rights reserved."
                 }
         }
-        require("license_gen").setup()
+        config = function()
+            require("license_gen").setup()
+        end
 }
 ```
 
