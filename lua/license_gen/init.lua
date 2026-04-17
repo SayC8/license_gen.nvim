@@ -51,7 +51,7 @@ function M.create_license(arg)
     end
 
     if arg and arg ~= "" then
-        -- User provided and argument
+        -- User provided argument
         write_license_file(arg, name)
     else
         -- No argument show selection
