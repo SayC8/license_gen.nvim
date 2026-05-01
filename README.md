@@ -17,7 +17,16 @@ If a LICENSE already exists, asks for confirmation before overwriting.
 
 ## Installation
 
-Example using Lazy:
+Using vim.pack:
+
+``` Lua
+vim.pack.add{"https://github.com/SayC8/license_gen.nvim"}
+require("license_gen").setup({
+        default_name = "John Doe", -- Optional: overrides git config name
+    })
+```
+
+Using Lazy:
 
 ```Lua
 {
@@ -25,8 +34,8 @@ Example using Lazy:
         cmd = "AddLicense",
         config = function()
             require("license_gen").setup({
-                    default_name = "John Doe", -- Optional: overrides git config name
-                    })
+                default_name = "John Doe", -- Optional: overrides git config name
+            })
     end
 }
 ```
